@@ -11,6 +11,11 @@ This project contains an example of a login page that also stores login informat
 ### Requirements
 1. [Python](https://www.python.org/downloads/) 3.8.5 **+**
 2. An IDE capable of running or interpreting Python  
+3. pyinputplus
+
+To install pyinputplus, enter the following into your terminal
+
+    pip install --user pyinputplus
 
 This project can be directly downloaded via [the main page](https://www.github.com/raper03/login_example) of this repository from the big green **Code** button.
 Otherwise, you may clone this repository by grabbing the HTTPS also found in the big green **Code** button.

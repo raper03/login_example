@@ -1,9 +1,11 @@
-import passwordstrength
+import src.passwordstrength as passwordstrength
 import pyinputplus as pyip
-import loginparse as parse
+
+from src.loginparse import loginparse as parse
+signupparse = parse()
 
 def newuser():
-    dicti = parse.getData()
+    dicti = signupparse.getData()
 
     while True:
         yesVal = 'yes'
@@ -42,7 +44,8 @@ def prompt():
     print('Create an account:')
     user = newuser()
     password = newpassword()
-    parse.parseUser(user, password)
+    
+    signupparse.parseUser(user, password)
     return
     
 

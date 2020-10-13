@@ -1,28 +1,36 @@
 import json
 
-def getData():
-    f = open('userdata.JSON')
-    x = json.loads(f.read())
-    f.close()
+class loginparse:
+    def __init__(self, directory = r'src\userdata.JSON'):
+        self.directory = directory
 
-    return x['data']
+    def getData(self):
 
+        f = open(self.directory)
+        x = json.loads(f.read())
+        f.close()
 
-def parseUser(user, password):
+        return x['data']
 
-    userlist = getData()
-    
-    x = {
-        'user' : user,
-        'password' : password
-    }
+    def setData(self, data):
+        y = json.dumps(data, indent= 3)
 
-    userlist.append(x)
+        f = open(self.directory, "w")
+        f.write(y)
+        f.close()
 
-    data = {'data' : userlist}
-    y = json.dumps(data, indent= 3)
-    
-    f = open("userdata.JSON", "w")
-    f.write(y)
-    f.close()
-    print(f'New user created! Welcome {user}.')
+    def parseUser(self, user, password):
+
+        userlist = self.getData()
+        
+        x = {
+            'user' : user,
+            'password' : password
+        }
+
+        userlist.append(x)
+
+        data = {'data' : userlist}
+        self.setData(data)
+        print(f'New user created! Welcome {user}.')
+

@@ -1,5 +1,5 @@
-import signup
-import signin
+import src.signup as signup
+import src.signin as signin
 # TODO - auto feed values into signup if user wants to sign up using data they entered during sign in prompt
 
 if __name__ == "__main__":

@@ -1,12 +1,13 @@
-import loginparse as parse
+from src.loginparse import loginparse as parse
 import pyinputplus as pyip
+signinparse = parse()
 
 def enter(value):
     key = pyip.inputStr(prompt = f'\tPlease enter {value}: ')
     return key
 
 def check(user, password):
-    dicti = parse.getData()
+    dicti = signinparse.getData()
     
     for index in range(len(dicti)):
         if dicti[index]['user'] == user and dicti[index]['password'] == password:
